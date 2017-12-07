@@ -85,4 +85,4 @@ console.log(infixToPostfix('1 + 2')); // '1 2 +'
 console.log(infixToPostfix('(a + b) - (c + d)'));
 console.log(infixToPostfix('((3 * 4) / (2 + 5)) * (3 + 4)')); // '3 4 * 2 5 + / 3 4 + *'
 console.log(infixToPostfix('((57 - 34) * (6 / 32)) + 43'));
-console.log(infixToPostfix('4+8*6-5/3-2*2+2'));
+console.log(infixToPostfix('4+8*6-5/3-2*2+2'));//
