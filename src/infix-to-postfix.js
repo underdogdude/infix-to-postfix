@@ -30,6 +30,9 @@ function infixToPostfix(infixStr) {
         topStack = stack.pop();
     	}
     }	
+    else {
+      return "This is not expression!"
+    }
   }
   while (stack.length != 0) {
   	postfixStr += stack.pop();

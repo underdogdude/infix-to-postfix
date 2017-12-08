@@ -1,38 +1,139 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Infix to Postfix Converter</title>
+		<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Infix to Postfix Converter">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Font -->
+		<link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+
+		<style type="text/css">
+			html {
+				margin: 0;
+		    padding: 0;
+		    font-family: 'Varela Round', sans-serif;
+		    color: #333333
+			}
+
+			.wrapper {
+				position: relative;
+				overflow: auto;
+			}
+
+			.header {
+		    font-family: 'Abril Fatface', cursive;
+		    margin-top:1em;
+		    margin-bottom: 1em;
+		    text-align: center;
+		    font-size: 3em;
+		    word-spacing: 15px;
+		    letter-spacing: 3px;
+		   	color:#333333;
+			}
+			div {
+				width:50%;
+				margin: 10px auto;
+				position: relative;
+				flex-wrap:  wrap; 
+			}
+			textarea {
+				outline: none;
+		    resize: none;
+			}
+			img {
+				position: fixed;	
+				right: 0;
+				bottom: 0;
+				opacity: .1;
+				filter: alpha(opacity=10); 
+				width: 50%;
+				z-index: -1;
+			}
+			.show-panel {
+				width: 100%;
+				height: 100px;
+				padding:8px;
+				padding-left: 1em;
+				background: #f6f6f6;
+				border: solid 1px #e9e9e9;
+				border-radius: 20px;
+			}
+			[role="button"] {
+				border:3.5px solid #fe276a;
+				padding: 10px;
+				text-align: center;
+				position: relative;
+				cursor: pointer;
+			}
+			[role="button"] > span {
+				width: 100%;
+				position: relative;
+				font-weight: bold;
+				font-size: 1em;
+				color : #ff9f50;
+			}
+			::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		  	font-family: 'Varela Round', sans-serif;
+		  	font-size: 18px;
+			}
+			::-moz-placeholder { /* Firefox 19+ */
+			  font-family: 'Varela Round', sans-serif;
+			  font-size: 18px;
+			}
+			:-ms-input-placeholder { /* IE 10+ */
+			  font-family: 'Varela Round', sans-serif;
+			  font-size: 18px;
+			}
+			:-moz-placeholder { /* Firefox 18- */
+			  font-family: 'Varela Round', sans-serif;
+			  font-size: 18px;
+			}
+			@media screen and (max-width: 750px) {
+			    div {
+			        width: 85% !important;
+			    }
+			}
+
+		</style>
 </head>
-<style type="text/css">
-	div {
-		width:50%; border:2px solid grey;padding:20px;
-		margin:10px;
-		position: relative;
-	}
-	input {
-		width: 500px;
-		height:100px;
-		position: relative;
-		float: left;
-		display: block;
-	}
-	button {
-		width: 100px;
-		height:105px;
-		margin-left :1em;
-		margin-top : 0;
-	}
-</style>
+
 <body>
+	<section class="wrapper">
+		<h1 class="header"> 
+				<span style="color:#1ea8ea;">I</span>nfix 
+				<span style="color:#08da82;">t</span>o 
+				<span style="color:#fedf6c;">P</span>ostfix
+				<span style="color:#fe276a;">C</span>onverter.
+		</h1>
 		<div>
-				<h1>Infix to Postfix Converter</h1>
-				<input type="text" placeholder="insert expression" id="express"/>
-				<button onclick="cal()">Convert to Postfix</button>
+				<h1>Infix</h1>
+				<textarea type="text" class="show-panel" placeholder="insert expression" id="express"/></textarea>
 		</div>
-		<div>
-				<h1>Result</h1>
-				<h3 id ="show"></h3>
+		<div style="margin-top: 2em;">
+			<div role="button" onclick="cal()">
+				<span>Convert to Postfix</span>
+			</div>
 		</div>
+		<div style="margin:3em auto;">
+			<hr />
+		</div>
+		<div style="margin-top:3em;">
+				<h1>Postfix</h1>
+				<div class="show-panel">
+					<h3 id ="show">
+					</h3>
+				</div>
+		</div>
+		<div style="text-align: center;opacity: .2">
+			<span>Warning : This not working in Decimal number and Negative value.</span>
+		</div>
+		<div style="margin-top:3em;">
+		</div>
+	</section>
+	<img src="bg.svg" alt="bg" />
 </body>
 <script type="text/javascript" src="infix-to-postfix.js"></script>
 
