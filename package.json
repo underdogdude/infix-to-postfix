@@ -1,0 +1,10 @@
+{
+  "name": "infix-to-postfix",
+  "version": "1.0.0",
+  "description": "Infix to Postfix Converter",
+  "main": "infix-to-postfix.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "underdogdude"
+}
